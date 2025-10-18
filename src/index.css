@@ -1,0 +1,176 @@
+
+/* @font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/Montserrat-Regular.woff2') format('woff2'),
+       url('/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/Montserrat-Bold.woff2') format('woff2'),
+       url('/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+} */
+
+/* استخدم الخط في كل المشروع */
+/* body {
+  font-family: 'Montserrat', sans-serif;
+} */
+
+
+:root {
+  --primary-color: #1ABC9C;
+  --dark-color: #2C3E50;
+  --light-color: #ffffff;
+  --font-main: 'Montserrat', sans-serif;
+}
+
+* {
+  font-family: var(--font-main);
+}
+
+body {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--dark-color) !important;
+    padding: 1.5rem 1rem;
+}
+
+.navbar .nav-link {
+  color: var(--light-color) !important;
+  transition: 0.3s;
+    font-size: 1.1rem; /* تكبير روابط القائمة */
+  padding: 0.5rem 1rem; 
+}
+
+.navbar .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+.navbar-brand {
+  font-size: 1.75rem; /* تكبير اسم الموقع */
+}
+/* Home Section */
+section.vh-100 {
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+section.vh-100 h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+section.vh-100 p {
+  font-weight: 300;
+}
+
+/* Section Titles */
+h2 {
+  color: var(--dark-color);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  display: block;
+  margin: 10px auto;
+}
+
+/* Portfolio Images */
+.card {
+  border: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.card img {
+  transition: 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+footer i {
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+footer i:hover {
+  color: var(--primary-color);
+}
+/* Footer Sections */
+.footer-top {
+  background-color: #2C3E50;
+}
+
+.footer-bottom {
+  background-color: #1A252F;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Social Icons */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid white;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background-color: white;
+  color: #2C3E50;
+}
+/* Overlay effect on hover */
+.overlay {
+  background-color: rgba(26, 188, 156, 0.9);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+/* Modal custom styles */
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+}
+
+.btn-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}

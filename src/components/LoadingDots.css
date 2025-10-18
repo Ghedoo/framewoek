@@ -1,0 +1,62 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(240, 240, 240, 0.8);
+}
+
+.dots {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.dots span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: jump 0.6s infinite, colorChange 1.2s infinite alternate;
+}
+
+/* توزيع التأخير لتتابع القفز */
+.dots span:nth-child(1) { animation-delay: 0s, 0s; }
+.dots span:nth-child(2) { animation-delay: 0.1s, 0.1s; }
+.dots span:nth-child(3) { animation-delay: 0.2s, 0.2s; }
+.dots span:nth-child(4) { animation-delay: 0.3s, 0.3s; }
+.dots span:nth-child(5) { animation-delay: 0.4s, 0.4s; }
+.dots span:nth-child(6) { animation-delay: 0.5s, 0.5s; }
+
+/* حركة القفز */
+@keyframes jump {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-15px); }
+}
+
+/* تغيير اللون تدريجيًا */
+@keyframes colorChange {
+  0% { background-color: #1abc9c; }
+  100% { background-color: #2c3e50; }
+}
+
+/* نص Loading مع Gradient Animation */
+.loading-container p {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #1abc9c, #2c3e50, #1abc9c);
+  background-size: 200% 100%;
+  background-clip: text;             /* ✅ النسخة القياسية */
+  -webkit-background-clip: text;     /* ✅ دعم متصفحات WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent;                /* اختياري لتأكيد الشفافية */
+  animation: textGradient 2s linear infinite;
+}
+
+
+@keyframes textGradient {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}
